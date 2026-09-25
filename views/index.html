@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ===== SEO ===== -->
+  <title>DH TECH — Thiết kế Website Chuyên Nghiệp & Hiện Đại</title>
+  <meta name="description" content="DH TECH chuyên thiết kế website hiện đại, responsive, tối ưu SEO và hiệu năng cho cá nhân, startup và doanh nghiệp." />
+  <meta name="keywords" content="thiết kế website, web design, DH TECH, website doanh nghiệp, landing page, UI UX design, SEO, Việt Nam" />
+  <meta name="author" content="Lê Diên Hiếu — DH TECH" />
+  <link rel="canonical" href="https://dhtech.io.vn/" />
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dhtech.io.vn/" />
+  <meta property="og:title" content="DH TECH — Thiết kế Website Chuyên Nghiệp & Hiện Đại" />
+  <meta property="og:description" content="DH TECH chuyên thiết kế website hiện đại, responsive, tối ưu SEO và hiệu năng cho cá nhân, startup và doanh nghiệp." />
+  <meta property="og:image" content="/images/Logo_DHTech.png" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:site_name" content="DH TECH" />
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DH TECH — Thiết kế Website Chuyên Nghiệp & Hiện Đại" />
+  <meta name="twitter:description" content="DH TECH chuyên thiết kế website hiện đại, responsive, tối ưu SEO và hiệu năng cho cá nhân, startup và doanh nghiệp." />
+  <meta name="twitter:image" content="/images/Logo_DHTech.png" />
+
+  <!-- ===== Favicon ===== -->
+  <link rel="icon" type="image/png" href="/images/Logo_DHTech.png" />
+  <link rel="apple-touch-icon" href="/images/Logo_DHTech.png" />
+
+  <!-- ===== Structured Data ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DH TECH",
+    "description": "Web Design & Digital Solutions Studio",
+    "url": "https://dhtech.io.vn",
+    "logo": "https://dhtech.io.vn/images/Logo_DHTech.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Lê Diên Hiếu",
+      "url": "https://ledienhieu.vercel.app"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+84-328-821-260",
+      "contactType": "customer service",
+      "email": "lehieu2026.in@gmail.com"
+    },
+    "sameAs": [
+      "https://github.com/hieule52",
+      "https://www.tiktok.com/@dhtech68"
+    ],
+    "serviceType": ["Web Design", "UI/UX Design", "SEO", "Landing Page", "E-commerce Website"]
+  }
+  </script>
+
+  <!-- ===== Preconnect ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+
+  <!-- ===== Theme color ===== -->
+  <meta name="theme-color" content="#080B0F" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<header class="navbar" id="navbar" role="banner">
+  <div class="navbar__inner">
+    <a href="#home" class="navbar__logo" aria-label="DH TECH — Về trang chủ">
+      <img
+        src="/images/Logo_DHTech.png"
+        alt="DH TECH Logo"
+        class="navbar__logo-img"
+        width="120"
+        height="38"
+        fetchpriority="high"
+      />
+    </a>
+
+    <nav class="navbar__nav" role="navigation" aria-label="Main navigation">
+      <a href="#home"     class="navbar__link active" aria-current="page">Trang chủ</a>
+      <a href="#services" class="navbar__link">Dịch vụ</a>
+      <a href="#process"  class="navbar__link">Quy trình</a>
+      <a href="#portfolio" class="navbar__link">Dự án</a>
+      <a href="#about"    class="navbar__link">Về DH TECH</a>
+      <a href="#contact"  class="navbar__link">Liên hệ</a>
+    </nav>
+
+    <a href="#contact" class="btn btn--primary navbar__cta" id="navbar-cta" aria-label="Bắt đầu dự án với DH TECH">
+      Bắt đầu dự án
+    </a>
+
+    <button
+      class="navbar__hamburger"
+      id="hamburger"
+      aria-label="Mở menu di động"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="navbar__mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu di động">
+  <nav class="navbar__mobile-nav" aria-label="Mobile navigation">
+    <a href="#home"     class="navbar__mobile-link" data-mobile-link>Trang chủ</a>
+    <a href="#services" class="navbar__mobile-link" data-mobile-link>Dịch vụ</a>
+    <a href="#process"  class="navbar__mobile-link" data-mobile-link>Quy trình</a>
+    <a href="#portfolio" class="navbar__mobile-link" data-mobile-link>Dự án</a>
+    <a href="#about"    class="navbar__mobile-link" data-mobile-link>Về DH TECH</a>
+    <a href="#contact"  class="navbar__mobile-link" data-mobile-link>Liên hệ</a>
+  </nav>
+  <a href="#contact" class="btn btn--primary w-full text-center" data-mobile-link>Bắt đầu dự án</a>
+</div>
+
+<main id="main-content">
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero" id="home" aria-label="Hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+
+  <!-- Glow orbs -->
+  <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+  <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <div class="hero__content">
+
+      <!-- Eyebrow -->
+      <div class="hero__eyebrow anim-fade-up">
+        <span class="badge badge--primary">
+          <span class="glow-dot" aria-hidden="true"></span>
+          Web Design & Digital Solutions Studio
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="hero__title anim-fade-up anim-delay-1">
+        <span class="hero__title-brand">DH TECH</span>
+      </h1>
+
+      <!-- Tagline -->
+      <p class="hero__tagline anim-fade-up anim-delay-2">
+        Biến ý tưởng thành<br />trải nghiệm số.
+      </p>
+
+      <!-- Description -->
+      <p class="hero__desc anim-fade-up anim-delay-3">
+        Thiết kế website hiện đại, tối ưu SEO và hiệu năng giúp thương hiệu của bạn nổi bật trên Internet.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero__cta anim-fade-up anim-delay-4">
+        <a href="#contact" class="btn btn--primary btn--lg" id="hero-cta-primary">
+          Bắt đầu dự án
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="#portfolio" class="btn btn--ghost btn--lg" id="hero-cta-secondary">
+          Xem dự án
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero__stats anim-fade-in anim-delay-5">
+        <div class="hero__stat">
+          <span class="hero__stat-number">5+</span>
+          <span class="hero__stat-label">Dự án hoàn thành</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number">100%</span>
+          <span class="hero__stat-label">Khách hàng hài lòng</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number">2026</span>
+          <span class="hero__stat-label">Năm thành lập</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll" aria-hidden="true">
+    <span class="hero__scroll-text">Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- Section separator -->
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- ============================================================
+     ABOUT SECTION
+     ============================================================ -->
+<section class="about section" id="about" aria-label="Về DH TECH">
+  <div class="container">
+    <div class="about__inner">
+      <!-- Left: Text -->
+      <div>
+        <span class="about__eyebrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          DH TECH là ai?
+        </span>
+
+        <h2 class="about__title anim-fade-up">
+          Studio công nghệ chuyên về <span class="gradient-text">thiết kế website</span>
+        </h2>
+
+        <p class="about__desc anim-fade-up anim-delay-1">
+          DH TECH là studio công nghệ tập trung vào thiết kế và phát triển website hiện đại cho cá nhân, startup và doanh nghiệp. Không chỉ xây dựng một website đẹp — DH TECH hướng tới trải nghiệm số toàn diện.
+        </p>
+
+        <a href="#contact" class="btn btn--outline anim-fade-up anim-delay-2">
+          Trao đổi với DH TECH
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+
+      <!-- Right: Workflow -->
+      <div class="about__workflow anim-fade-up anim-delay-1">
+
+        <div class="workflow-item">
+          <div class="workflow-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="workflow-text">
+            <strong>Strategy</strong>
+            <span>Nghiên cứu, định hướng và kế hoạch tổng thể</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+          </div>
+          <div class="workflow-text">
+            <strong>UI/UX Design</strong>
+            <span>Thiết kế giao diện đẹp, trực quan và dễ sử dụng</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <div class="workflow-text">
+            <strong>Development</strong>
+            <span>Lập trình hiện đại, clean code và tối ưu hiệu suất</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          </div>
+          <div class="workflow-text">
+            <strong>SEO & Performance</strong>
+            <span>Tối ưu cấu trúc, tốc độ và khả năng tìm kiếm</span>
+          </div>
+        </div>
+
+        <div class="workflow-item">
+          <div class="workflow-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <div class="workflow-text">
+            <strong>Deployment</strong>
+            <span>Deploy và bàn giao website hoàn chỉnh</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section separator -->
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- ============================================================
+     SERVICES SECTION
+     ============================================================ -->
+<section class="services section" id="services" aria-label="Dịch vụ">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Dịch vụ</span>
+      <h2 class="section-title anim-fade-up">Dịch vụ của <span>DH TECH</span></h2>
+      <p class="section-desc anim-fade-up anim-delay-1">
+        Từ thiết kế đến triển khai — DH TECH đồng hành cùng bạn ở mọi bước.
+      </p>
+    </div>
+
+    <div class="services__grid" role="list">
+
+      <!-- Service 1 -->
+      <article class="service-card anim-fade-up" role="listitem">
+        <div class="service-card__inner">
+          <div class="service-card__icon">
+            <div class="icon-box" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+          </div>
+          <h3 class="service-card__title">Website Doanh Nghiệp</h3>
+          <p class="service-card__desc">Website chuyên nghiệp giúp doanh nghiệp xây dựng hình ảnh và tăng độ tin cậy trên môi trường số.</p>
+        </div>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="service-card anim-fade-up anim-delay-1" role="listitem">
+        <div class="service-card__inner">
+          <div class="service-card__icon">
+            <div class="icon-box" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            </div>
+          </div>
+          <h3 class="service-card__title">Website Bán Hàng</h3>
+          <p class="service-card__desc">Giao diện tối ưu cho sản phẩm, dịch vụ và chuyển đổi khách hàng. Trải nghiệm mua hàng mượt mà.</p>
+        </div>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="service-card anim-fade-up anim-delay-2" role="listitem">
+        <div class="service-card__inner">
+          <div class="service-card__icon">
+            <div class="icon-box" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+          </div>
+          <h3 class="service-card__title">Landing Page</h3>
+          <p class="service-card__desc">Landing page tập trung vào chiến dịch marketing và tối đa hóa tỷ lệ chuyển đổi khách hàng.</p>
+        </div>
+      </article>
+
+      <!-- Service 4 -->
+      <article class="service-card anim-fade-up anim-delay-3" role="listitem">
+        <div class="service-card__inner">
+          <div class="service-card__icon">
+            <div class="icon-box" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+          </div>
+          <h3 class="service-card__title">Website Cá Nhân</h3>
+          <p class="service-card__desc">Portfolio, CV online, personal branding và website cho freelancer. Thể hiện đúng bản sắc cá nhân.</p>
+        </div>
+      </article>
+
+      <!-- Service 5 -->
+      <article class="service-card anim-fade-up anim-delay-4" role="listitem">
+        <div class="service-card__inner">
+          <div class="service-card__icon">
+            <div class="icon-box" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+          </div>
+          <h3 class="service-card__title">UI/UX Design</h3>
+          <p class="service-card__desc">Thiết kế giao diện hiện đại, trực quan và tối ưu trải nghiệm người dùng trên mọi thiết bị.</p>
+        </div>
+      </article>
+
+      <!-- Service 6 -->
+      <article class="service-card anim-fade-up anim-delay-5" role="listitem">
+        <div class="service-card__inner">
+          <div class="service-card__icon">
+            <div class="icon-box" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+          </div>
+          <h3 class="service-card__title">SEO & Performance</h3>
+          <p class="service-card__desc">Tối ưu cấu trúc website, tốc độ tải trang và nền tảng SEO để website nổi bật trên Google.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- ============================================================
+     PROCESS SECTION
+     ============================================================ -->
+<section class="process section" id="process" aria-label="Quy trình làm việc">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Quy trình</span>
+      <h2 class="section-title anim-fade-up">Từ ý tưởng đến <span>website</span></h2>
+      <p class="section-desc anim-fade-up anim-delay-1">
+        Quy trình làm việc rõ ràng, minh bạch và đảm bảo chất lượng ở từng bước.
+      </p>
+    </div>
+
+    <div class="process__timeline" role="list">
+
+      <div class="process-step anim-fade-up" role="listitem">
+        <div class="process-step__number" aria-hidden="true">01</div>
+        <h3 class="process-step__title">Discovery</h3>
+        <p class="process-step__desc">Tìm hiểu nhu cầu, mục tiêu và đối tượng khách hàng.</p>
+      </div>
+
+      <div class="process-step anim-fade-up anim-delay-1" role="listitem">
+        <div class="process-step__number" aria-hidden="true">02</div>
+        <h3 class="process-step__title">Strategy</h3>
+        <p class="process-step__desc">Xây dựng cấu trúc và định hướng thiết kế phù hợp.</p>
+      </div>
+
+      <div class="process-step anim-fade-up anim-delay-2" role="listitem">
+        <div class="process-step__number" aria-hidden="true">03</div>
+        <h3 class="process-step__title">Design</h3>
+        <p class="process-step__desc">Thiết kế UI/UX với giao diện đẹp và trực quan.</p>
+      </div>
+
+      <div class="process-step anim-fade-up anim-delay-3" role="listitem">
+        <div class="process-step__number" aria-hidden="true">04</div>
+        <h3 class="process-step__title">Development</h3>
+        <p class="process-step__desc">Lập trình và tối ưu code, hiệu suất website.</p>
+      </div>
+
+      <div class="process-step anim-fade-up anim-delay-4" role="listitem">
+        <div class="process-step__number" aria-hidden="true">05</div>
+        <h3 class="process-step__title">Testing</h3>
+        <p class="process-step__desc">Kiểm tra responsive, performance và UX toàn diện.</p>
+      </div>
+
+      <div class="process-step anim-fade-up anim-delay-5" role="listitem">
+        <div class="process-step__number" aria-hidden="true">06</div>
+        <h3 class="process-step__title">Launch</h3>
+        <p class="process-step__desc">Deploy website và bàn giao dự án hoàn chỉnh.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- ============================================================
+     PORTFOLIO SECTION
+     ============================================================ -->
+<section class="portfolio section" id="portfolio" aria-label="Portfolio">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Portfolio</span>
+      <h2 class="section-title anim-fade-up">Những dự án <span>DH TECH</span> đã thực hiện</h2>
+      <p class="section-desc anim-fade-up anim-delay-1">
+        Mỗi dự án là một câu chuyện — từ ý tưởng, thiết kế đến sản phẩm thực tế.
+      </p>
+    </div>
+
+    <div class="portfolio__grid" role="list">
+
+      <!-- Project 1: Nhat Jewelry -->
+      <a
+        href="https://nhat-jewerly.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-card anim-fade-up"
+        role="listitem"
+        aria-label="Xem dự án Nhật Jewelry"
+      >
+        <div class="project-card__image-wrap">
+          <img
+            src="/images/NhatJewerly.png"
+            alt="Website Nhật Jewelry — thương mại trang sức hiện đại"
+            class="project-card__image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="project-card__overlay" aria-hidden="true">
+            <div class="project-card__cta">
+              <span>Xem dự án</span>
+              <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+        <div class="project-card__info">
+          <div class="project-card__category">E-commerce Website</div>
+          <h3 class="project-card__title">Nhật Jewelry</h3>
+          <p class="project-card__desc">Website giới thiệu và thương mại cho thương hiệu trang sức với giao diện hiện đại và tập trung vào hình ảnh sản phẩm.</p>
+          <div class="project-card__tags">
+            <span class="tag">UI/UX</span>
+            <span class="tag">E-commerce</span>
+            <span class="tag">Responsive</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Project 2: Tien Quoc Auto Spa -->
+      <a
+        href="https://tienquoc-autospa.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-card anim-fade-up anim-delay-1"
+        role="listitem"
+        aria-label="Xem dự án Tiến Quốc Auto Spa"
+      >
+        <div class="project-card__image-wrap">
+          <img
+            src="/images/TienQuocAutoSpa.png"
+            alt="Website Tiến Quốc Auto Spa — dịch vụ chăm sóc xe hơi"
+            class="project-card__image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="project-card__overlay" aria-hidden="true">
+            <div class="project-card__cta">
+              <span>Xem dự án</span>
+              <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+        <div class="project-card__info">
+          <div class="project-card__category">Business Website</div>
+          <h3 class="project-card__title">Tiến Quốc Auto Spa</h3>
+          <p class="project-card__desc">Website dịch vụ chăm sóc xe hơi chuyên nghiệp, tập trung vào chuyển đổi khách hàng và thể hiện uy tín thương hiệu.</p>
+          <div class="project-card__tags">
+            <span class="tag">Business</span>
+            <span class="tag">Service</span>
+            <span class="tag">SEO</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- ============================================================
+     MORE PROJECTS SECTION
+     ============================================================ -->
+<section class="more-projects section" id="experiments" aria-label="Dự án thử nghiệm">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Experiments</span>
+      <h2 class="section-title anim-fade-up">More <span>Projects</span></h2>
+      <p class="section-desc anim-fade-up anim-delay-1">
+        Các dự án thử nghiệm và sản phẩm đang phát triển của DH TECH.
+      </p>
+    </div>
+
+    <div class="more-projects__grid" role="list">
+
+      <!-- AI Study Hub -->
+      <a
+        href="https://github.com/hieule52/ai-study-hub-v2"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="experiment-card anim-fade-up"
+        role="listitem"
+        aria-label="Xem dự án AI Study Hub trên GitHub"
+      >
+        <div class="experiment-card__image-wrap">
+          <img
+            src="/images/AIHUB.png"
+            alt="AI Study Hub — nền tảng học tập tích hợp AI"
+            class="experiment-card__image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="experiment-card__overlay" aria-hidden="true">
+            <div class="experiment-card__github-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="experiment-card__info">
+          <div class="experiment-card__category">AI Platform</div>
+          <h3 class="experiment-card__title">AI Study Hub</h3>
+          <p class="experiment-card__desc">Nền tảng học tập tích hợp AI, hỗ trợ sinh viên tiếp cận tài nguyên học tập thông minh.</p>
+        </div>
+      </a>
+
+      <!-- GionQuan -->
+      <a
+        href="https://github.com/hieule52/GionQuan"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="experiment-card anim-fade-up anim-delay-1"
+        role="listitem"
+        aria-label="Xem dự án GionQuan trên GitHub"
+      >
+        <div class="experiment-card__image-wrap">
+          <img
+            src="/images/posQuanNhau.png"
+            alt="GionQuan — hệ thống quản lý điểm bán hàng"
+            class="experiment-card__image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="experiment-card__overlay" aria-hidden="true">
+            <div class="experiment-card__github-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="experiment-card__info">
+          <div class="experiment-card__category">POS System</div>
+          <h3 class="experiment-card__title">GionQuan</h3>
+          <p class="experiment-card__desc">Ứng dụng quản lý quán nhậu và điểm bán hàng, tối ưu quy trình vận hành.</p>
+        </div>
+      </a>
+
+      <!-- Coming Soon -->
+      <div class="coming-soon-card anim-fade-up anim-delay-2" aria-label="Dự án sắp ra mắt">
+        <div class="coming-soon-card__icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <h4>More projects coming soon...</h4>
+        <p>DH TECH vẫn đang phát triển không ngừng.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- ============================================================
+     WHY DH TECH
+     ============================================================ -->
+<section class="why section" id="why" aria-label="Vì sao chọn DH TECH">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Vì sao chọn DH TECH?</span>
+      <h2 class="section-title anim-fade-up">Điều khiến <span>DH TECH</span> khác biệt</h2>
+      <p class="section-desc anim-fade-up anim-delay-1">
+        Không chỉ là code — DH TECH quan tâm đến kết quả kinh doanh của bạn.
+      </p>
+    </div>
+
+    <div class="why__grid" role="list">
+
+      <article class="why-card anim-fade-up" role="listitem">
+        <div class="why-card__icon">
+          <div class="icon-box" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </div>
+        </div>
+        <h3 class="why-card__title">Creative Design</h3>
+        <p class="why-card__desc">Không sử dụng template đại trà. Mỗi website được thiết kế riêng, mang cá tính của thương hiệu.</p>
+      </article>
+
+      <article class="why-card anim-fade-up anim-delay-1" role="listitem">
+        <div class="why-card__icon">
+          <div class="icon-box" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+        </div>
+        <h3 class="why-card__title">Modern Technology</h3>
+        <p class="why-card__desc">Sử dụng công nghệ web hiện đại, tối ưu cho hiệu suất và khả năng mở rộng trong tương lai.</p>
+      </article>
+
+      <article class="why-card anim-fade-up anim-delay-2" role="listitem">
+        <div class="why-card__icon">
+          <div class="icon-box" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+          </div>
+        </div>
+        <h3 class="why-card__title">Responsive</h3>
+        <p class="why-card__desc">Website hoạt động hoàn hảo trên desktop, tablet và mobile — không ngoại lệ.</p>
+      </article>
+
+      <article class="why-card anim-fade-up anim-delay-3" role="listitem">
+        <div class="why-card__icon">
+          <div class="icon-box" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+        </div>
+        <h3 class="why-card__title">SEO Ready</h3>
+        <p class="why-card__desc">Cấu trúc website được xây dựng đúng chuẩn SEO từ đầu, giúp dễ dàng xuất hiện trên Google.</p>
+      </article>
+
+      <article class="why-card anim-fade-up anim-delay-4" role="listitem">
+        <div class="why-card__icon">
+          <div class="icon-box" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+        </div>
+        <h3 class="why-card__title">High Performance</h3>
+        <p class="why-card__desc">Ưu tiên tốc độ tải trang và Core Web Vitals — website nhanh là website thắng.</p>
+      </article>
+
+      <article class="why-card anim-fade-up anim-delay-5" role="listitem">
+        <div class="why-card__icon">
+          <div class="icon-box" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+        </div>
+        <h3 class="why-card__title">Direct Support</h3>
+        <p class="why-card__desc">Khách hàng làm việc trực tiếp với DH TECH — không qua trung gian, không mất thời gian.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- ============================================================
+     PRICING SECTION
+     ============================================================ -->
+<section class="pricing section" id="pricing" aria-label="Bảng giá dịch vụ">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Gói dịch vụ</span>
+      <h2 class="section-title anim-fade-up">Gói <span>website</span> phù hợp với bạn</h2>
+      <p class="section-desc anim-fade-up anim-delay-1">
+        Liên hệ để nhận báo giá chính xác theo nhu cầu thực tế của dự án.
+      </p>
+    </div>
+
+    <div class="pricing__grid">
+
+      <!-- Starter -->
+      <div class="pricing-card anim-fade-up">
+        <div class="pricing-card__tier">Starter</div>
+        <h3 class="pricing-card__title">Cơ Bản</h3>
+        <p class="pricing-card__price">Phù hợp cho cá nhân và startup. Liên hệ để nhận báo giá.</p>
+        <ul class="pricing-card__features" role="list">
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Website cơ bản 5-7 trang
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Responsive mobile
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            SEO cơ bản
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Deploy và bàn giao
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn--ghost w-full">Nhận báo giá</a>
+      </div>
+
+      <!-- Business (Featured) -->
+      <div class="pricing-card pricing-card--featured anim-fade-up anim-delay-1">
+        <div class="pricing-badge">Phổ biến nhất</div>
+        <div class="pricing-card__tier">Business</div>
+        <h3 class="pricing-card__title">Chuyên Nghiệp</h3>
+        <p class="pricing-card__price">Cho doanh nghiệp muốn xây dựng hình ảnh mạnh. Liên hệ báo giá.</p>
+        <ul class="pricing-card__features" role="list">
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Thiết kế custom theo brand
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            UI/UX design chuẩn
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            SEO & Performance tối ưu
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Hỗ trợ sau bàn giao
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Analytics tích hợp
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn--primary w-full">Nhận báo giá</a>
+      </div>
+
+      <!-- Custom -->
+      <div class="pricing-card anim-fade-up anim-delay-2">
+        <div class="pricing-card__tier">Custom</div>
+        <h3 class="pricing-card__title">Theo Yêu Cầu</h3>
+        <p class="pricing-card__price">Website thiết kế riêng theo nhu cầu đặc thù. Thảo luận trực tiếp.</p>
+        <ul class="pricing-card__features" role="list">
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Tất cả tính năng Business
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Tính năng đặc thù theo yêu cầu
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Tích hợp API, hệ thống
+          </li>
+          <li class="pricing-feature">
+            <svg class="pricing-feature__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Hỗ trợ dài hạn
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn--outline w-full">Trao đổi trực tiếp</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- ============================================================
+     CTA SECTION
+     ============================================================ -->
+<section class="cta-section section" id="cta" aria-label="Bắt đầu dự án">
+  <div class="container">
+    <div class="cta-section__inner">
+      <span class="section-eyebrow" style="justify-content:center;">Bắt đầu ngay</span>
+      <h2 class="cta-section__title anim-fade-up">
+        Bạn có ý tưởng <span class="gradient-text">website?</span>
+      </h2>
+      <p class="cta-section__desc anim-fade-up anim-delay-1">
+        Hãy để DH TECH biến ý tưởng đó thành một sản phẩm số thực sự — đẹp, nhanh và hiệu quả.
+      </p>
+      <div class="cta-section__btns anim-fade-up anim-delay-2">
+        <a href="#contact" class="btn btn--primary btn--lg" id="cta-main">
+          Bắt đầu dự án
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="mailto:lehieu2026.in@gmail.com" class="btn btn--ghost btn--lg" id="cta-email">
+          Trao đổi với DH TECH
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep" aria-hidden="true"></div>
+
+<!-- ============================================================
+     CONTACT SECTION
+     ============================================================ -->
+<section class="contact section" id="contact" aria-label="Liên hệ">
+  <div class="container">
+    <div class="contact__inner">
+      <!-- Left: Info -->
+      <div>
+        <span class="section-eyebrow">Liên hệ</span>
+        <h2 class="contact__info-title anim-fade-up">
+          Kết nối với <span class="gradient-text">DH TECH</span>
+        </h2>
+        <p class="contact__info-desc anim-fade-up anim-delay-1">
+          Hãy chia sẻ ý tưởng của bạn. DH TECH sẽ tư vấn và đưa ra giải pháp phù hợp nhất.
+        </p>
+
+        <div class="contact__details">
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <div class="contact-detail__label">Gmail</div>
+              <div class="contact-detail__value">
+                <a href="mailto:lehieu2026.in@gmail.com">lehieu2026.in@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.4a16 16 0 0 0 6.11 6.11l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <div class="contact-detail__label">Số điện thoại</div>
+              <div class="contact-detail__value">
+                <a href="tel:+84328821260">0328 821 260</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail__label">GitHub</div>
+              <div class="contact-detail__value">
+                <a href="https://github.com/hieule52" target="_blank" rel="noopener noreferrer">hieule52</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.94a8.17 8.17 0 004.77 1.51V7.01a4.85 4.85 0 01-1-.32z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail__label">TikTok</div>
+              <div class="contact-detail__value">
+                <a href="https://www.tiktok.com/@dhtech68" target="_blank" rel="noopener noreferrer">@dhtech68</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div>
+              <div class="contact-detail__label">Founder</div>
+              <div class="contact-detail__value">
+                <a href="https://ledienhieu.vercel.app" target="_blank" rel="noopener noreferrer">Lê Diên Hiếu</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contact__socials">
+          <a href="https://github.com/hieule52" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub DH TECH">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@dhtech68" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok DH TECH">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.94a8.17 8.17 0 004.77 1.51V7.01a4.85 4.85 0 01-1-.32z"/></svg>
+          </a>
+          <a href="mailto:lehieu2026.in@gmail.com" class="social-btn" aria-label="Email DH TECH">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form" id="contact-form-wrap">
+        <h3 class="contact-form__title">Bắt đầu dự án</h3>
+        <p class="contact-form__subtitle">Điền thông tin và DH TECH sẽ phản hồi sớm nhất.</p>
+
+        <form class="contact-form__fields" id="contact-form" novalidate aria-label="Form liên hệ">
+          <!-- Name & Email -->
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="name">Họ và tên <span class="required" aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="Nguyễn Văn A"
+                required
+                autocomplete="name"
+                aria-required="true"
+                aria-describedby="name-error"
+              />
+              <span class="form-error" id="name-error" role="alert">Vui lòng nhập họ và tên.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email <span class="required" aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="email@example.com"
+                required
+                autocomplete="email"
+                aria-required="true"
+                aria-describedby="email-error"
+              />
+              <span class="form-error" id="email-error" role="alert">Vui lòng nhập email hợp lệ.</span>
+            </div>
+          </div>
+
+          <!-- Phone & Website Type -->
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="phone">Số điện thoại</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-input"
+                placeholder="0xxx xxx xxx"
+                autocomplete="tel"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="websiteType">Loại website <span class="required" aria-hidden="true">*</span></label>
+              <select
+                id="websiteType"
+                name="websiteType"
+                class="form-select"
+                required
+                aria-required="true"
+                aria-describedby="type-error"
+              >
+                <option value="" disabled selected>Chọn loại website...</option>
+                <option value="business">Website doanh nghiệp</option>
+                <option value="ecommerce">Website bán hàng</option>
+                <option value="landing">Landing page</option>
+                <option value="personal">Website cá nhân / Portfolio</option>
+                <option value="uiux">UI/UX Design</option>
+                <option value="seo">SEO & Performance</option>
+                <option value="other">Khác</option>
+              </select>
+              <span class="form-error" id="type-error" role="alert">Vui lòng chọn loại website.</span>
+            </div>
+          </div>
+
+          <!-- Budget -->
+          <div class="form-group">
+            <label class="form-label" for="budget">Ngân sách dự kiến</label>
+            <select id="budget" name="budget" class="form-select">
+              <option value="" disabled selected>Chọn khoảng ngân sách...</option>
+              <option value="under-5m">Dưới 5 triệu</option>
+              <option value="5-10m">5 – 10 triệu</option>
+              <option value="10-20m">10 – 20 triệu</option>
+              <option value="20-50m">20 – 50 triệu</option>
+              <option value="over-50m">Trên 50 triệu</option>
+              <option value="discuss">Thảo luận trực tiếp</option>
+            </select>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label class="form-label" for="message">Mô tả dự án <span class="required" aria-hidden="true">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-textarea"
+              placeholder="Mô tả ngắn về website bạn muốn xây dựng, mục tiêu và yêu cầu đặc biệt..."
+              required
+              aria-required="true"
+              aria-describedby="message-error"
+            ></textarea>
+            <span class="form-error" id="message-error" role="alert">Vui lòng mô tả dự án của bạn.</span>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-submit-wrap">
+            <button type="submit" class="btn btn--primary btn--lg" id="submit-btn" aria-live="polite">
+              <span class="btn-text">Gửi yêu cầu</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </div>
+
+          <!-- Form Messages -->
+          <div class="form-message" id="form-success" role="status" aria-live="polite">
+            ✓ Gửi thành công! DH TECH sẽ phản hồi bạn trong thời gian sớm nhất.
+          </div>
+          <div class="form-message" id="form-error-msg" role="alert" aria-live="assertive">
+            ✗ Có lỗi xảy ra. Vui lòng thử lại hoặc liên hệ trực tiếp qua email.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <!-- Brand -->
+      <div>
+        <img src="/images/Logo_DHTech.png" alt="DH TECH" class="footer__brand-logo" width="100" height="32" loading="lazy" />
+        <p class="footer__brand-tagline">Build Your Digital Presence.<br />Biến ý tưởng thành trải nghiệm số.</p>
+        <div class="footer__socials">
+          <a href="https://github.com/hieule52" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@dhtech68" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.94a8.17 8.17 0 004.77 1.51V7.01a4.85 4.85 0 01-1-.32z"/></svg>
+          </a>
+          <a href="mailto:lehieu2026.in@gmail.com" class="social-btn" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h3 class="footer__col-title">Dịch vụ</h3>
+        <nav class="footer__nav" aria-label="Services links">
+          <a href="#services" class="footer__link">Website Doanh Nghiệp</a>
+          <a href="#services" class="footer__link">Website Bán Hàng</a>
+          <a href="#services" class="footer__link">Landing Page</a>
+          <a href="#services" class="footer__link">UI/UX Design</a>
+          <a href="#services" class="footer__link">SEO & Performance</a>
+        </nav>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="footer__col-title">Navigation</h3>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="#home"      class="footer__link">Trang chủ</a>
+          <a href="#portfolio" class="footer__link">Dự án</a>
+          <a href="#process"   class="footer__link">Quy trình</a>
+          <a href="#about"     class="footer__link">Về DH TECH</a>
+          <a href="#contact"   class="footer__link">Liên hệ</a>
+        </nav>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="footer__col-title">Liên hệ</h3>
+        <div class="footer__nav">
+          <a href="mailto:lehieu2026.in@gmail.com" class="footer__link">lehieu2026.in@gmail.com</a>
+          <a href="tel:+84328821260" class="footer__link">0328 821 260</a>
+          <a href="https://ledienhieu.vercel.app" target="_blank" rel="noopener noreferrer" class="footer__link">Lê Diên Hiếu</a>
+          <a href="https://github.com/hieule52" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__divider"></div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 DH TECH. All rights reserved.</p>
+      <p class="footer__founder">
+        Crafted by <a href="https://ledienhieu.vercel.app" target="_blank" rel="noopener noreferrer">Lê Diên Hiếu</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast container -->
+<div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<!-- JavaScript -->
+<script src="/js/main.js" defer></script>
+
+</body>
+</html>
