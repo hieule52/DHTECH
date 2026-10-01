@@ -94,8 +94,8 @@ let transporter = null;
 function getTransporter() {
   if (transporter) return transporter;
 
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
+  const smtpUser = (process.env.SMTP_USER || '').trim();
+  const smtpPass = (process.env.SMTP_PASS || '').replace(/\s+/g, '');
 
   if (!smtpUser || !smtpPass) {
     console.warn('[DH TECH] SMTP credentials not configured. Email sending is disabled.');
@@ -171,7 +171,7 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
     const cleanMessage = sanitize(message);
 
     if (!cleanName || cleanName.length < 2) {
-      errors.push('Tên không hợp lệ.');
+      errors.push('Tên không hợp lệ (tối thiểu 2 ký tự).');
     }
     if (!cleanEmail || !validateEmail(cleanEmail)) {
       errors.push('Email không hợp lệ.');
@@ -180,7 +180,7 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
       errors.push('Vui lòng chọn loại website.');
     }
     if (!cleanMessage || cleanMessage.length < 10) {
-      errors.push('Mô tả dự án quá ngắn.');
+      errors.push('Mô tả dự án quá ngắn (tối thiểu 10 ký tự).');
     }
 
     if (errors.length > 0) {
@@ -210,55 +210,103 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
       'discuss':   'Thảo luận trực tiếp',
     };
 
+    const typeDisplay = websiteTypeLabels[cleanType] || cleanType;
+    const budgetDisplay = budgetLabels[cleanBudget] || cleanBudget || 'Thảo luận trực tiếp';
+
+    const textBody = `==============================
+YÊU CẦU DỰ ÁN MỚI - DH TECH
+==============================
+
+Họ và tên:
+${cleanName}
+
+Email:
+${cleanEmail}
+
+Số điện thoại:
+${cleanPhone || 'Chưa cung cấp'}
+
+Loại website:
+${typeDisplay}
+
+Ngân sách dự kiến:
+${budgetDisplay}
+
+Mô tả dự án:
+${cleanMessage}
+
+==============================
+DH TECH
+Build Your Digital Presence.
+==============================`;
+
     const htmlBody = `
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
-    .card { background: #fff; border-radius: 12px; padding: 32px; max-width: 600px; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-    .brand { color: #3B82F6; font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-    .subtitle { color: #6B7280; font-size: 14px; margin-bottom: 24px; }
-    .field { margin-bottom: 16px; }
-    .label { font-size: 11px; font-weight: 600; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.05em; }
-    .value { font-size: 15px; color: #111827; margin-top: 4px; line-height: 1.6; }
-    .divider { border: none; border-top: 1px solid #E5E7EB; margin: 20px 0; }
-    .footer { font-size: 12px; color: #9CA3AF; text-align: center; margin-top: 24px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #F8FAFC; margin: 0; padding: 28px 16px; color: #1E293B; }
+    .wrapper { max-width: 600px; margin: 0 auto; background: #FFFFFF; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #E2E8F0; }
+    .header { background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 50%, #06B6D4 100%); padding: 32px 28px; color: #FFFFFF; text-align: left; }
+    .header-logo { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .header-tagline { font-size: 13px; opacity: 0.9; margin: 0; }
+    .content { padding: 32px 28px; }
+    .intro { font-size: 15px; color: #475569; margin-top: 0; margin-bottom: 24px; line-height: 1.6; }
+    .field-card { background: #F8FAFC; border-radius: 10px; border: 1px solid #F1F5F9; padding: 14px 18px; margin-bottom: 12px; }
+    .field-label { font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .field-value { font-size: 15px; font-weight: 600; color: #0F172A; line-height: 1.5; }
+    .field-value a { color: #2563EB; text-decoration: none; }
+    .message-box { background: #F8FAFC; border-left: 4px solid #2563EB; border-radius: 4px 10px 10px 4px; padding: 18px; margin-top: 16px; }
+    .message-text { font-size: 14px; color: #334155; line-height: 1.7; white-space: pre-wrap; margin-top: 6px; }
+    .footer { padding: 24px 28px; background: #F8FAFC; border-top: 1px solid #E2E8F0; text-align: center; font-size: 12px; color: #64748B; line-height: 1.6; }
+    .footer strong { color: #0F172A; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="brand">🚀 DH TECH — Yêu cầu mới từ website</div>
-    <p class="subtitle">Bạn vừa nhận được một yêu cầu liên hệ mới.</p>
-    <hr class="divider" />
-    <div class="field">
-      <div class="label">Họ và tên</div>
-      <div class="value">${cleanName}</div>
+  <div class="wrapper">
+    <div class="header">
+      <div class="header-logo">DH TECH</div>
+      <p class="header-tagline">Yêu Cầu Tư Vấn Website Mới</p>
     </div>
-    <div class="field">
-      <div class="label">Email</div>
-      <div class="value"><a href="mailto:${cleanEmail}">${cleanEmail}</a></div>
+    <div class="content">
+      <p class="intro">Bạn nhận được một yêu cầu tư vấn dự án mới từ form liên hệ trên website <strong>DH TECH</strong>.</p>
+      
+      <div class="field-card">
+        <div class="field-label">Họ và tên</div>
+        <div class="field-value">${cleanName}</div>
+      </div>
+      
+      <div class="field-card">
+        <div class="field-label">Email liên hệ</div>
+        <div class="field-value"><a href="mailto:${cleanEmail}">${cleanEmail}</a></div>
+      </div>
+      
+      ${cleanPhone ? `
+      <div class="field-card">
+        <div class="field-label">Số điện thoại</div>
+        <div class="field-value"><a href="tel:${cleanPhone}">${cleanPhone}</a></div>
+      </div>` : ''}
+      
+      <div class="field-card">
+        <div class="field-label">Loại website</div>
+        <div class="field-value">${typeDisplay}</div>
+      </div>
+      
+      <div class="field-card">
+        <div class="field-label">Ngân sách dự kiến</div>
+        <div class="field-value">${budgetDisplay}</div>
+      </div>
+      
+      <div class="message-box">
+        <div class="field-label">Mô tả dự án</div>
+        <div class="message-text">${cleanMessage}</div>
+      </div>
     </div>
-    ${cleanPhone ? `<div class="field">
-      <div class="label">Số điện thoại</div>
-      <div class="value">${cleanPhone}</div>
-    </div>` : ''}
-    <div class="field">
-      <div class="label">Loại website</div>
-      <div class="value">${websiteTypeLabels[cleanType] || cleanType}</div>
+    <div class="footer">
+      <strong>DH TECH Studio</strong> · Build Your Digital Presence.<br />
+      Email: ${recipientEmail} · Hotline: 0328 821 260
     </div>
-    ${cleanBudget ? `<div class="field">
-      <div class="label">Ngân sách dự kiến</div>
-      <div class="value">${budgetLabels[cleanBudget] || cleanBudget}</div>
-    </div>` : ''}
-    <hr class="divider" />
-    <div class="field">
-      <div class="label">Mô tả dự án</div>
-      <div class="value">${cleanMessage.replace(/\n/g, '<br>')}</div>
-    </div>
-    <hr class="divider" />
-    <div class="footer">DH TECH Website · lehieu2026.in@gmail.com · 0328 821 260</div>
   </div>
 </body>
 </html>`;
@@ -270,28 +318,28 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
         from:    `"DH TECH Website" <${process.env.SMTP_USER}>`,
         to:      recipientEmail,
         replyTo: cleanEmail,
-        subject: `[DH TECH] Yêu cầu mới từ ${cleanName} — ${websiteTypeLabels[cleanType] || cleanType}`,
+        subject: `[DH TECH] Yêu cầu tư vấn website mới — ${cleanName}`,
+        text:    textBody,
         html:    htmlBody,
       });
 
-      console.log(`[DH TECH] Email sent to ${recipientEmail} from ${cleanEmail}`);
+      console.log(`[DH TECH] Email sent successfully to ${recipientEmail} from ${cleanEmail}`);
     } else {
-      // Log to console when SMTP not configured (dev mode)
-      console.log('[DH TECH] Contact request received (email not sent — SMTP not configured):');
-      console.log({ name: cleanName, email: cleanEmail, type: cleanType });
+      console.warn('[DH TECH] SMTP not configured. Request logged locally:');
+      console.log({ name: cleanName, email: cleanEmail, type: typeDisplay });
     }
 
     return res.status(200).json({
       success: true,
-      message: 'Yêu cầu đã được gửi thành công. DH TECH sẽ phản hồi sớm nhất!',
+      message: 'Gửi yêu cầu thành công! DH TECH sẽ liên hệ với bạn trong thời gian sớm nhất.',
     });
 
   } catch (err) {
-    // Do not expose internal errors
-    console.error('[DH TECH] Contact API error:', err.message);
+    // Only log server error, never leak details to client
+    console.error('[DH TECH] Contact API internal error:', err.message);
     return res.status(500).json({
       success: false,
-      message: 'Có lỗi xảy ra. Vui lòng thử lại hoặc liên hệ trực tiếp qua email.',
+      message: 'Không thể gửi yêu cầu. Vui lòng thử lại hoặc liên hệ trực tiếp với DH TECH.',
     });
   }
 });

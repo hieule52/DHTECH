@@ -102,13 +102,13 @@
 
   if (prefersReducedMotion) {
     // Make all animated elements immediately visible
-    document.querySelectorAll('.anim-fade-up, .anim-fade-in').forEach(el => {
+    document.querySelectorAll('.anim-fade-up, .anim-fade-in, .anim-blur-up').forEach(el => {
       el.classList.add('visible');
     });
     return;
   }
 
-  const animatedElements = document.querySelectorAll('.anim-fade-up, .anim-fade-in');
+  const animatedElements = document.querySelectorAll('.anim-fade-up, .anim-fade-in, .anim-blur-up');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -155,7 +155,7 @@
       e.preventDefault();
 
       const navbarHeight = parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue('--navbar-height') || '72'
+        getComputedStyle(document.documentElement).getPropertyValue('--navbar-height') || '74'
       );
 
       const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
@@ -257,7 +257,7 @@
 
     if (loading) {
       submitBtn.disabled = true;
-      btnText.textContent = 'Đang gửi...';
+      btnText.textContent = 'Đang gửi yêu cầu...';
       if (btnIcon) btnIcon.style.display = 'none';
 
       // Add spinner
@@ -277,6 +277,7 @@
   // Show toast notification
   function showToast(message, type = 'success') {
     const container = document.getElementById('toast-container');
+    if (!container) return;
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
 
@@ -292,7 +293,7 @@
       toast.style.opacity = '0';
       toast.style.transform = 'translateX(110%)';
       setTimeout(() => toast.remove(), 350);
-    }, 4000);
+    }, 4500);
   }
 
   // Form submit
@@ -305,7 +306,6 @@
 
     // Validate
     if (!validateAll()) {
-      // Scroll to first error
       const firstError = form.querySelector('.error');
       if (firstError) {
         firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -338,15 +338,15 @@
       if (response.ok && result.success) {
         successMsg.classList.add('success');
         form.reset();
-        showToast('Gửi thành công! DH TECH sẽ phản hồi sớm nhất.', 'success');
+        showToast('✓ Gửi yêu cầu thành công! DH TECH sẽ liên hệ với bạn trong thời gian sớm nhất.', 'success');
         successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else {
-        throw new Error(result.message || 'Có lỗi xảy ra');
+        throw new Error(result.message || 'Không thể gửi yêu cầu.');
       }
     } catch (err) {
-      console.error('Contact form error:', err);
+      console.error('Contact form submission error:', err);
       errorMsg.classList.add('error');
-      showToast('Có lỗi xảy ra. Vui lòng thử lại.', 'error');
+      showToast('Không thể gửi yêu cầu. Vui lòng thử lại hoặc liên hệ trực tiếp với DH TECH.', 'error');
     } finally {
       setLoading(false);
     }
@@ -360,19 +360,44 @@
   if (window.innerWidth < 768) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+  const bgArt = document.getElementById('hero-bg-art');
   const orb1 = document.querySelector('.hero__orb--1');
   const orb2 = document.querySelector('.hero__orb--2');
-  if (!orb1 || !orb2) return;
+  const orb3 = document.querySelector('.hero__orb--3');
 
   let animFrame;
 
   document.addEventListener('mousemove', (e) => {
     cancelAnimationFrame(animFrame);
     animFrame = requestAnimationFrame(() => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 40;
-      const y = (e.clientY / window.innerHeight - 0.5) * 30;
-      orb1.style.transform = `translate(${x}px, ${y}px)`;
-      orb2.style.transform = `translate(${-x * 0.6}px, ${-y * 0.6}px)`;
+      const x = (e.clientX / window.innerWidth - 0.5) * 24;
+      const y = (e.clientY / window.innerHeight - 0.5) * 16;
+      
+      if (bgArt) {
+        bgArt.style.transform = `translate(${x * 0.35}px, ${y * 0.25}px)`;
+      }
+      if (orb1) orb1.style.transform = `translate(${x * 0.8}px, ${y * 0.8}px)`;
+      if (orb2) orb2.style.transform = `translate(${-x * 0.5}px, ${-y * 0.5}px)`;
+      if (orb3) orb3.style.transform = `translate(${-x * 0.4}px, ${y * 0.4}px)`;
+    });
+  });
+})();
+
+/* ============================================================
+   CARD HOVER SPOTLIGHT (desktop only)
+   ============================================================ */
+(function initCardSpotlight() {
+  if (window.innerWidth < 768) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const cards = document.querySelectorAll('.service-card, .why-card, .pricing-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--spotlight-x', `${x}px`);
+      card.style.setProperty('--spotlight-y', `${y}px`);
     });
   });
 })();
@@ -430,8 +455,9 @@ document.querySelectorAll('.btn, .project-card, .experiment-card').forEach(el =>
    INIT
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  // Reveal hero content immediately (no observer needed)
-  document.querySelectorAll('.hero .anim-fade-up, .hero .anim-fade-in').forEach(el => {
-    setTimeout(() => el.classList.add('visible'), 100);
+  // Staggered reveal for hero elements
+  const heroElements = document.querySelectorAll('.hero .anim-fade-up, .hero .anim-fade-in, .hero .anim-blur-up');
+  heroElements.forEach((el, index) => {
+    setTimeout(() => el.classList.add('visible'), 60 + index * 100);
   });
 });
